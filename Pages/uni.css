@@ -1,0 +1,129 @@
+/* Container for image fader */
+.image-fader {
+    position: relative;
+    height: 80vh; 
+    overflow: hidden;
+  }
+  
+  /* Styles for images inside the container */
+  .fader-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation-name: imagefade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 8s; 
+  }
+  
+  /* Keyframes for fading effect */
+  @keyframes imagefade {
+    0%, 20% { 
+      opacity: 1;
+    }
+    25%, 75% { 
+      opacity: 0;
+    }
+    100% { 
+      opacity: 1;
+    }
+  }
+  
+  /* Set different delays for each image */
+/* Set different delays for each image */
+.fader-image:nth-of-type(1) { animation-delay: 0s; }    /* Visible for 2s */
+.fader-image:nth-of-type(2) { animation-delay: 2s; }    /* Visible for 2s */
+.fader-image:nth-of-type(3) { animation-delay: 4s; }    /* Visible for 2s */
+.fader-image:nth-of-type(4) { animation-delay: 6s; } 
+
+
+.image {
+  position: relative; 
+  width: 400px;
+  height: 300px;
+  overflow: hidden; 
+
+}
+
+.image-image {
+  position: absolute;
+  width: 500px; /* Use full width of the container */
+  /* height: 10; Use full height of the container */
+  object-fit: cover; /* Cover to maintain aspect ratio */
+  opacity: 0; /* Start with hidden images */
+  animation-name: imagefade;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s; 
+}
+
+@keyframes imagefade {
+  0%, 20% { 
+    opacity: 1; /* Fade in */
+  }
+  25%, 75% { 
+    opacity: 0; /* Fade out */
+  }
+  100% { 
+    opacity: 1; /* Fade back in */
+  }
+}
+
+/* Set different delays for each image */
+.image-image:nth-of-type(1) { animation-delay: 0s; }   /* Visible for 2s */
+.image-image:nth-of-type(2) { animation-delay: 2s; }   /* Visible for 2s */
+.image-image:nth-of-type(3) { animation-delay: 4s; }   /* Visible for 2s */
+.image-image:nth-of-type(4) { animation-delay: 6s; }   /* Visible for 2s */
+
+.video{
+  position: relative;
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+
+
+}
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 8s linear infinite;
+  animation-play-state: running;
+  cursor: pointer;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+
+.logo{
+  width: 50px;
+}
+/* styles.css */
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px; /* Width of the spinner */
+  height: 60px; /* Height of the spinner */
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

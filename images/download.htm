@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	  <link href="https://itu.edu.pk/wp-content/uploads/2015/05/favicon-16x16.png" type="image/png" rel="icon" />
+
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap" rel="stylesheet">
+	<link type="text/css" href="https://itu.edu.pk/wp-content/themes/itu/css/bootstrap.css" rel="stylesheet" />
+	<link type="text/css" href="https://itu.edu.pk/wp-content/themes/itu/css/bootstrap-theme.css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="https://itu.edu.pk/wp-content/themes/itu/css/easy-responsive-tabs.css" />
+    <link rel="stylesheet" href="https://itu.edu.pk/wp-content/themes/itu/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://itu.edu.pk/wp-content/themes/itu/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://itu.edu.pk/wp-content/themes/itu/css/owl.carousel.min.css">
+    <link href="https://itu.edu.pk/wp-content/themes/itu/css/animate.css" rel="stylesheet">
+    <link href="https://itu.edu.pk/wp-content/themes/itu/css/hover.css" rel="stylesheet">
+    <link href="https://itu.edu.pk/wp-content/themes/itu/css/org-chart.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script type="text/javascript" src="https://itu.edu.pk/wp-content/themes/itu/js/jquery-1.10.2.min.js" /></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="https://itu.edu.pk/wp-content/themes/itu/js/easyResponsiveTabs.js" type="text/javascript"></script>
+	<script type="text/javascript" src="https://itu.edu.pk/wp-content/themes/itu/js/bootstrap.min.js" /></script>    
+    <!-- <script type="text/javascript" src="https://itu.edu.pk/wp-content/themes/itu/js/jquery.main.js" /></script> -->
+    <script type="text/javascript" src="https://itu.edu.pk/wp-content/themes/itu/js/smoothscroll.js"></script>
+    <script type="text/javascript"  src="https://itu.edu.pk/wp-content/themes/itu/js/modernizr.js"></script>
+    <!-- <script type="text/javascript" src="https://itu.edu.pk/wp-content/themes/itu/js/owl.carousel.js"></script> -->
+
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+            // get current URL path and assign 'active' class
+            var pathname = window.location.pathname;
+            $('ul li a[href="'+pathname+'"]').parent().addClass('active');
+            $('ul li a').click(function(){ $('li a').removeClass("active"); $(this).addClass("active"); });
+
+            $(".menu-item-8763 > a").attr("href", "https://itu.edu.pk/admissions/");
+            $( ".menu-item-8763 > a" ).click(function() {
+                window.location.href = 'https://itu.edu.pk/admissions/';
+            });
+
+            // $('#itu-faculty').owlCarousel({
+            //     loop: true,
+            //     margin: 10,
+            //     dots: false,
+            //     navText : ["",""],
+            //     animateOut: 'fadeOut',
+            //     animateIn: 'fadeIn',
+            //     smartSpeed:750,
+            //     responsiveClass: true,
+            //     responsive: {
+            //         0: {
+            //             items: 1,
+            //             nav: true
+            //         },
+            //         600: {
+            //             items: 1,
+            //             nav: true
+            //         },
+            //         1000: {
+            //             items: 1,
+            //             nav: true,
+            //             loop: true,
+            //             margin: 20
+            //         }
+            //     }
+            // })
+
+            var $searchlink = $('#searchtoggl');
+            var $searchbar  = $('#s');
+
+            $('#searchtoggl').on('click', function(e){
+
+                if($(this).attr('id') == 'searchtoggl') {
+                   
+
+                    $searchbar.slideToggle(500, function(){
+                      //  $("#s").show();
+                        document.getElementById("s").focus();
+                        // callback after search bar animation
+                    });
+                }
+            });
+
+            $('#s').submit(function(e){
+                e.preventDefault(); // stop form submission
+            });
+            $("#menu-main-menu").find("a").addClass("ajax-call");
+            $("body").find("a").addClass("ajax-call");
+            var $progress = $('#progress');
+            $(document).ajaxStart(function() {
+                //only add progress bar if not added yet.
+                if ($progress.length === 0) {
+                    $progress = $('<div><dt/><dd/></div>').attr('id', 'progress');
+                    $("body").append($progress);
+                }
+                $progress.width((50 + Math.random() * 30) + "%");
+            });
+
+            $(document).ajaxComplete(function() {
+                //End loading animation
+                $progress.width("100%").delay(200).fadeOut(400, function() {
+                    $progress.width("0%").delay(200).show();
+                });
+            });
+
+		$('#accordion').on('shown.bs.collapse', function () {
+
+			var panel = $(this).find('.in');
+
+			$('html, body').animate({
+				scrollTop: panel.offset().top
+			}, 500);
+
+		});
+
+// OPACITY OF BUTTON SET TO 0%
+$(".roll").css("opacity","0");
+ 
+// ON MOUSE OVER
+$(".roll").hover(function () {
+ 
+// SET OPACITY TO 70%
+$(this).stop().animate({
+opacity: .5
+}, "slow");
+},
+ 
+// ON MOUSE OUT
+function () {
+ 
+// SET OPACITY BACK TO 50%
+$(this).stop().animate({
+opacity: 0
+}, "slow");
+});
+                   $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+             $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion           
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+
+                $name.text($tab.text());
+
+                $info.show();
+            }
+        });    
+            });			 
+                
+	</script>
+	<link rel="pingback" href="https://itu.edu.pk/xmlrpc.php" />
+
+	
+	
+		<!-- All in One SEO 4.7.0 - aioseo.com -->
+		<title>Dr. Zeeshan Rafiq - Information Technology University</title>
+		<meta name="description" content="Dr Zeeshan has completed his PhD in Management from the prestigious University of Edinburgh, United Kingdom. He has several accolades to his name. He obtained a distinction in Consumer Behaviour in his MBA from IBA, Punjab University. He is also the recipient of the Global Research Scholarship and the Principal Career Development Scholarship from the" />
+		<meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://itu.edu.pk/faculty-itu/dr-zeeshan-rafiq/" />
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.7.0" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Information Technology University - Information Technology University" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Dr. Zeeshan Rafiq - Information Technology University" />
+		<meta property="og:description" content="Dr Zeeshan has completed his PhD in Management from the prestigious University of Edinburgh, United Kingdom. He has several accolades to his name. He obtained a distinction in Consumer Behaviour in his MBA from IBA, Punjab University. He is also the recipient of the Global Research Scholarship and the Principal Career Development Scholarship from the" />
+		<meta property="og:url" content="https://itu.edu.pk/faculty-itu/dr-zeeshan-rafiq/" />
+		<meta property="article:published_time" content="2014-04-19T12:52:44+00:00" />
+		<meta property="article:modified_time" content="2024-07-03T11:36:20+00:00" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Dr. Zeeshan Rafiq - Information Technology University" />
+		<meta name="twitter:description" content="Dr Zeeshan has completed his PhD in Management from the prestigious University of Edinburgh, United Kingdom. He has several accolades to his name. He obtained a distinction in Consumer Behaviour in his MBA from IBA, Punjab University. He is also the recipient of the Global Research Scholarship and the Principal Career Development Scholarship from the" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/itu.edu.pk\/#listItem","position":1,"name":"Home","item":"https:\/\/itu.edu.pk\/","nextItem":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#listItem"},{"@type":"ListItem","@id":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#listItem","position":2,"name":"Dr. Zeeshan Rafiq","previousItem":"https:\/\/itu.edu.pk\/#listItem"}]},{"@type":"Organization","@id":"https:\/\/itu.edu.pk\/#organization","name":"Information Technology University","description":"Information Technology University","url":"https:\/\/itu.edu.pk\/"},{"@type":"Person","@id":"https:\/\/itu.edu.pk\/author\/ituadministrator\/#author","url":"https:\/\/itu.edu.pk\/author\/ituadministrator\/","name":"ituadmin","image":{"@type":"ImageObject","@id":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/deadcc0345d612e6c50ccd7b0044c5d9?s=96&d=mm&r=g","width":96,"height":96,"caption":"ituadmin"}},{"@type":"WebPage","@id":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#webpage","url":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/","name":"Dr. Zeeshan Rafiq - Information Technology University","description":"Dr Zeeshan has completed his PhD in Management from the prestigious University of Edinburgh, United Kingdom. He has several accolades to his name. He obtained a distinction in Consumer Behaviour in his MBA from IBA, Punjab University. He is also the recipient of the Global Research Scholarship and the Principal Career Development Scholarship from the","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/itu.edu.pk\/#website"},"breadcrumb":{"@id":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#breadcrumblist"},"author":{"@id":"https:\/\/itu.edu.pk\/author\/ituadministrator\/#author"},"creator":{"@id":"https:\/\/itu.edu.pk\/author\/ituadministrator\/#author"},"image":{"@type":"ImageObject","url":"https:\/\/itu.edu.pk\/wp-content\/uploads\/2023\/02\/zeeshan-Rafiq.jpg","@id":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#mainImage","width":295,"height":200},"primaryImageOfPage":{"@id":"https:\/\/itu.edu.pk\/faculty-itu\/dr-zeeshan-rafiq\/#mainImage"},"datePublished":"2014-04-19T12:52:44+00:00","dateModified":"2024-07-03T11:36:20+00:00"},{"@type":"WebSite","@id":"https:\/\/itu.edu.pk\/#website","url":"https:\/\/itu.edu.pk\/","name":"Information Technology University","description":"Information Technology University","inLanguage":"en-US","publisher":{"@id":"https:\/\/itu.edu.pk\/#organization"}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<link rel="alternate" type="application/rss+xml" title="Information Technology University &raquo; Feed" href="https://itu.edu.pk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Information Technology University &raquo; Comments Feed" href="https://itu.edu.pk/comments/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/itu.edu.pk\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel='stylesheet' id='jquery.prettyphoto-css' href='https://itu.edu.pk/wp-content/plugins/wp-video-lightbox/css/prettyPhoto.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='video-lightbox-css' href='https://itu.edu.pk/wp-content/plugins/wp-video-lightbox/wp-video-lightbox.css?ver=6.6.1' type='text/css' media='all' />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://itu.edu.pk/wp-includes/css/dist/block-library/style.min.css?ver=6.6.1' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='arve-css' href='https://itu.edu.pk/wp-content/plugins/advanced-responsive-video-embedder/build/main.css?ver=755e5bf2bfafc15e7cc1' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css' href='https://itu.edu.pk/wp-content/plugins/olevmedia-shortcodes/assets/css/font-awesome.min.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='omsc-shortcodes-css' href='https://itu.edu.pk/wp-content/plugins/olevmedia-shortcodes/assets/css/shortcodes.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='omsc-shortcodes-tablet-css' href='https://itu.edu.pk/wp-content/plugins/olevmedia-shortcodes/assets/css/shortcodes-tablet.css?ver=6.6.1' type='text/css' media='screen and (min-width: 768px) and (max-width: 959px)' />
+<link rel='stylesheet' id='omsc-shortcodes-mobile-css' href='https://itu.edu.pk/wp-content/plugins/olevmedia-shortcodes/assets/css/shortcodes-mobile.css?ver=6.6.1' type='text/css' media='screen and (max-width: 767px)' />
+<link rel='stylesheet' id='wp-pagenavi-css' href='https://itu.edu.pk/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel='stylesheet' id='dflip-style-css' href='https://itu.edu.pk/wp-content/plugins/3d-flipbook-dflip-lite/assets/css/dflip.min.css?ver=2.3.32' type='text/css' media='all' />
+<link rel='stylesheet' id='newsletter-css' href='https://itu.edu.pk/wp-content/plugins/newsletter/style.css?ver=8.4.9' type='text/css' media='all' />
+<link rel='stylesheet' id='wpbgallery-bootstrap-css' href='https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/css/bootstrap.min.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpbgallery-blueimp-css' href='https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/css/blueimp-gallery.min.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpbgallery-gallery-css' href='https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/css/bootstrap-image-gallery.min.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpbgallery-style-css' href='https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/css/wpbgallery.css?ver=6.6.1' type='text/css' media='all' />
+<script type="text/javascript" src="https://itu.edu.pk/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/wp-video-lightbox/js/jquery.prettyPhoto.js?ver=3.1.6" id="jquery.prettyphoto-js"></script>
+<script type="text/javascript" id="video-lightbox-js-extra">
+/* <![CDATA[ */
+var vlpp_vars = {"prettyPhoto_rel":"wp-video-lightbox","animation_speed":"fast","slideshow":"5000","autoplay_slideshow":"false","opacity":"0.80","show_title":"true","allow_resize":"true","allow_expand":"true","default_width":"640","default_height":"480","counter_separator_label":"\/","theme":"light_square","horizontal_padding":"20","hideflash":"false","wmode":"opaque","autoplay":"true","modal":"false","deeplinking":"false","overlay_gallery":"true","overlay_gallery_max":"30","keyboard_shortcuts":"true","ie6_fallback":"true"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/wp-video-lightbox/js/video-lightbox.js?ver=3.1.6" id="video-lightbox-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/js/bootstrap.min.js?ver=6.6.1" id="wpbgallery-bootstrap-js-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/js/jquery.blueimp-gallery.min.js?ver=6.6.1" id="wpbgallery-blueimp-js-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/js/bootstrap-image-gallery.min.js?ver=6.6.1" id="wpbgallery-gallery-js-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/wp-bootstrap-gallery/js/wpbgallery.js?ver=6.6.1" id="wpbgallery-scripts-js"></script>
+<link rel='shortlink' href='https://itu.edu.pk/?p=18839' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://itu.edu.pk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fitu.edu.pk%2Ffaculty-itu%2Fdr-zeeshan-rafiq%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://itu.edu.pk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fitu.edu.pk%2Ffaculty-itu%2Fdr-zeeshan-rafiq%2F&#038;format=xml" />
+<script>
+            WP_VIDEO_LIGHTBOX_VERSION="1.9.11";
+            WP_VID_LIGHTBOX_URL="https://itu.edu.pk/wp-content/plugins/wp-video-lightbox";
+                        function wpvl_paramReplace(name, string, value) {
+                // Find the param with regex
+                // Grab the first character in the returned string (should be ? or &)
+                // Replace our href string with our new value, passing on the name and delimeter
+
+                var re = new RegExp("[\?&]" + name + "=([^&#]*)");
+                var matches = re.exec(string);
+                var newString;
+
+                if (matches === null) {
+                    // if there are no params, append the parameter
+                    newString = string + '?' + name + '=' + value;
+                } else {
+                    var delimeter = matches[0].charAt(0);
+                    newString = string.replace(re, delimeter + name + "=" + value);
+                }
+                return newString;
+            }
+            </script><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<meta name="generator" content="Powered by Slider Revolution 6.6.7 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<script>function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
+
+li.blockA {
+    font-size: 11px;
+    background-color: #2e2f7c;
+    /* padding: 10px; */
+color: #fff;
+}
+#pause{display: none;}
+
+
+
+.mbuttonhover {
+    padding-left:3px;
+fill: #49bdba;
+cursor: pointer;
+
+}
+.mbuttonhover:hover {
+fill: rgb(36,100,98);
+}
+i.radio {
+padding: 10px 8px;
+    margin-left: 4px !important;
+margin: 0;
+    background-color: #f99d20;
+}</style>
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+	
+	<!-- end saqib code-->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '575945453393063');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" 
+       src="https://www.facebook.com/tr?id=575945453393063&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C7C3SSY9LG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C7C3SSY9LG');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Ads: 10890362003 --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10890362003"></script> 
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-10890362003'); </script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '331836412465085'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=331836412465085&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157259769-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-157259769-1');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFRM7C0Q97"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HFRM7C0Q97');
+</script>
+
+</head>
+
+<body class="faculty-itu-template-default single single-faculty-itu postid-18839 wpb-js-composer js-comp-ver-6.8.0 vc_responsive">
+  
+    <!--<iframe src="https://bot.apogee.chat" style="z-index:9999;position: fixed; right: 0px; bottom: 10px; width: 360px;height: 600px;border: 0;"></iframe>-->
+<style>
+    .admissions1{
+        background: #f99d20;padding-left:40px;padding-right:40px;
+    }
+    .shortcourses-mobile{
+        display:none;
+    }
+    .shortcourses{
+        background: #f99d20;
+    }
+    .mb-topbar-left{
+text-align:left;
+
+    }
+    .mb-topbar-left .admissions1 a{
+        font-size: 14px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    }
+    .mb-topbar-right{
+        text-align:right;
+    }
+@media screen and (max-width:768px){
+    .mb-topbar-left .admissions1 a{
+    font-size:14px !important;
+    }
+    #top-bar{
+        padding-right:0;
+    }
+    .mb-topbar-left{
+text-align:center;
+
+    }
+.mb-topbar-right{
+    margin-top:10px;
+    border-top:2px solid #fff;
+}
+.mb-topbar-right .shortcourses{
+    background: none;
+}
+.shortcourses-mobile{
+    display:none;
+}
+.admissions1{
+        background: #f99d20;padding-left:20px;padding-right:20px;display:block;width:100%;font-size:14px;
+    }
+
+}
+
+</style>
+
+<!--topBar-->
+<div id="top-bar" class="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-lg-4 mb-topbar-left">
+                <ul class="list-inline">
+                                <audio id="audio-file">
+                <source  src="http://cdn.bmstudiopk.com:8600/stream?type=http&nocache=12" type="audio/mpeg">
+                </audio>
+                <li class="blockA" style="display:none">
+                <div>
+                <span class="mbuttonhover active" id="play"><img src="https://itu.edu.pk/wp-content/themes/itu/images/fm-icon.png"/> ITU FM 90.4<i class="fa fa-play radio" ></i></span>
+                <span  class="mbuttonhover active" id="pause"><img src="https://itu.edu.pk/wp-content/themes/itu/images/fm-icon.png"/> ITU FM 90.4<i class="fa fa-pause radio"></i></span>
+                </div>
+                </li> 
+                <!-- <li><a style="" href="https://itu.edu.pk/application"><b>Short Courses (<span class="blink_me">Admissions Open</span>)</b></a></li> -->
+                <li style="background: #f99d20;"><b><a href="https://itu.edu.pk/cm-punjab-honhaar-scholarship-program-2024-25/"><span class="blink_me">CM Honhaar Scholarship</span></a></b></li>
+                 <!-- <li class="admissions1"><a href="https://application.itu.edu.pk"><span class="blink_me1" >Admissions Open</span></a></li> -->
+                
+            </ul>
+            </div>
+            <!-- <div class="shortcourses-mobile text-center col-xs-12" >
+                <ul>
+                    <li><a href="https://itu.edu.pk/application"><span class="" >Short Courses</span></a></li>
+                </ul>    
+            </div> -->
+            <div class="col-md-8 col-xs-12 col-lg-8 text-center mb-topbar-right">
+            <ul class="list-inline">
+             <li  style="background: #f99d20;"><a style="font-weight:bold;" title="Merit Lists" href="https://itu.edu.pk/merit-lists-2024/" class="ajax-call">Merit Lists</a></li>
+
+<li><a href="https://itu.edu.pk/about/">About</a></li>
+<li class="shortcourses"><a style="" href="https://itu.edu.pk/cet"><b >Short Courses </b></a></li>
+
+<li><a href="https://itu.edu.pk/student-services-and-placement-office-sspo/">SSPO</a></li>
+<li class="dropdown" style="display:none">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Graduates</a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="https://itu.edu.pk/wp-content/uploads/2022/04/Graduates-2017.pdf" rel="noopener">Graduates - 2017</a></li>     
+<li><a href="https://itu.edu.pk/wp-content/uploads/2022/04/Graduates-2018.pdf" rel="noopener">Graduates - 2018</a></li>
+<li><a href="https://itu.edu.pk/wp-content/uploads/2022/04/Graduates-2019.pdf" rel="noopener">Graduates - 2019</a></li>
+<li><a href="https://itu.edu.pk/wp-content/uploads/2022/04/Graduates-2020.pdf" rel="noopener">Graduates - 2020</a></li>
+<li><a href="https://itu.edu.pk/wp-content/uploads/2022/11/Gradautes-2021.pdf" rel="noopener">Graduates - 2021</a></li>
+</ul>
+</li>
+            <!-- <li style="display: none"><a href="http://www.technologyreview.pk/?lang=en" target="_blank">MIT Technology Review Pakistan</a></li> -->
+<li><a href="https://itu.edu.pk/careers/">Jobs</a></li>
+
+  <li><a href="https://itu.edu.pk/quality/">QEC</a></li>
+  <li><a href="https://itu.edu.pk/oric">ORIC</a></li>
+  <!-- <li><a href="http://103.4.95.22/redmine/login">SupportDesk</a></li> -->
+  <li><a href="https://itu.edu.pk/office-of-advancement-and-external-linkages/">Advancement & External Linkages</a></li>
+            <li><a href="https://itu.edu.pk/contact/">Contact Us</a></li>
+            <li><a href="#" id="searchtoggl"><i class="fa fa-search"></i></a></li>
+        </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header container-fluid" id="header-menu">
+    <nav>
+        <a href="https://itu.edu.pk"><div id="logo"><img style="width:175px !important;margin-top:10px;" src="https://itu.edu.pk/wp-content/uploads/2024/05/Logo-ITU-NEW.png" alt="logo"/></div></a>
+
+        <label for="drop" class="toggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+            <li><a href="https://itu.edu.pk/">HOME</a></li>
+            <li><a href="https://itu.edu.pk/faculty-itu/">FACULTY</a></li>
+            <li><a href="https://itu.edu.pk/administration/">Administration</a></li>
+
+            <li>
+                <!-- First Tier Drop Down -->
+                <label for="drop-1" class="toggle">ADMISSIONS <span class="caret"></span></label>
+                <a href="https://itu.edu.pk/admissions/">ADMISSIONS</a>
+                <input type="checkbox" id="drop-1"/>
+                <ul>
+
+                    <li><a title="Overview" href="https://itu.edu.pk/admissions/" class="ajax-call">Overview</a></li>
+                    <li><a title="Admission Test Results" href="https://application.itu.edu.pk/site/Entrytest_Results" class="ajax-call">Admission Test Results</a></li>
+                    <li><a title="Merit Lists" href="https://itu.edu.pk/merit-lists-2024/" class="ajax-call">Merit Lists</a></li>
+
+
+
+                     <!-- <li><a href="https://application.itu.edu.pk" title="Apply Now"  class="ajax-call" style="background-color:#f89c1e !important;">Admissions Open</a></li> -->
+   <li><a title="Norms & Criteria" href="https://itu.edu.pk/admissions/application-process/" class="ajax-call">Norms & Criteria</a></li>
+<!-- <li><a title="Admissions Calendar 2022" href="https://itu.edu.pk/admissions#admissions-calendar" class="ajax-call">Admissions Calendar 2022</a></li> -->
+ <li><a title="Scholarships" href="https://itu.edu.pk/financial-assistance/" class="ajax-call">Scholarships</a></li>
+<li class="hide"><a title="Apply Online" href="https://itu.edu.pk/kamyab-jawan-program/" class="ajax-call">Kamyab Jawan Program</a></li>
+
+
+
+
+
+
+<li>
+
+<!-- First Tier Drop Down -->
+<label for="drop-5" class="toggle">UNDERGRADUATE PROGRAMS <span class="caret"></span></label>
+<a href="https://itu.edu.pk/admissions#undergraduate">UNDERGRADUATE PROGRAMS</a>
+<input type="checkbox" id="drop-5"/>
+<ul>
+<li><a href="https://itu.edu.pk/admissions/bs-economics-with-data-science/#verticalTab1">BS Economics with Data Science</a></li>
+<!-- <li><a href="https://itu.edu.pk/admissions/bs-english-with-digital-humanities/">BS English with Digital Humanities </a></li> -->
+<li><a href="https://itu.edu.pk/admissions/bs-computer-engineering/#verticalTab1">BS Computer Engineering</a></li>
+<li><a href="https://itu.edu.pk/admissions/bs-computer-science/#verticalTab1">BS Computer Science</a></li>
+<li><a href="https://itu.edu.pk/admissions/bs-electrical-engineering/#verticalTab1">BS Electrical Engineering </a></li>
+<li><a href="https://itu.edu.pk/admissions/bachelors-of-science-in-management-and-technology/#verticalTab1">BS Management and Technology </a></li>
+<li><a href="https://itu.edu.pk/admissions/bs-software-engineering-bs-se/">BS Software Engineering </a></li>
+<li><a href="https://itu.edu.pk/admissions/bs-artificial-intelligence-bs-ai/">BS Artificial Intelligence </a></li>
+
+
+<!-- <li><a href="https://itu.edu.pk/admissions/bs-english-language-and-linguistics/#verticalTab1">BS English Language and Linguistics </a></li> -->
+
+</ul>
+</li>
+
+                    <li>
+
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-4" class="toggle">GRADUATE PROGRAMS <span class="caret"></span></label>
+                        <a href="https://itu.edu.pk/admissions#graduate">GRADUATE PROGRAMS</a>
+                        <input type="checkbox" id="drop-4"/>
+                        <ul>
+                            <li><a href="https://itu.edu.pk/admissions/emba/">Executive MBA</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/msdevs/">MS Development Studies</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-in-public-policy-and-society/">MS Public Policy and Society</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-management-and-technology/">MS Management and Technology</a></li>
+
+                            <li><a href="https://itu.edu.pk/admissions/ms-electrical-engineering/#verticalTab1">MS Electrical Engineering</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-computer-engineering/">MS Computer Engineering</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-computer-science/#verticalTab1">MS Computer Science</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-data-science/#verticalTab1">MS Data Science</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/diploma-of-advanced-studies-in-artificial-intelligence-das-ai/">Diploma of Advanced Studies in Artificial Intelligence</a></li>
+
+                            <li><a href="https://itu.edu.pk/admissions/phd-electrical-engineering/#verticalTab1">PhD ELECTRICAL ENGINEERING</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/phd-computer-science/#verticalTab1">PhD COMPUTER SCIENCE</a></li>
+
+                            
+
+                        </ul>
+                    </li>
+                    <li style="background: #f99d20;"><a title="Short Cousres" href="https://itu.edu.pk/cet" class="ajax-call">Trainings & Short Courses</a></li>
+
+<li><a title="FAQs" href="https://itu.edu.pk/admissions/faqs/" class="ajax-call">FAQs</a></li>
+
+
+                </ul>
+
+            </li>
+
+        
+            <li><a href="https://itu.edu.pk/academics/">ACADEMICS</a></li>
+			<li><a href="https://itu.edu.pk/examinations/">EXAMINATIONS</a></li>
+
+            <li>
+
+                <!-- First Tier Drop Down -->
+                <label for="drop-2" class="toggle">NEWS <span class="caret"></span></label>
+                <a href="#">NEWS</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                    <li><a href="https://itu.edu.pk/itu-latest-news/">EVENTS AND HAPPENINGS</a></li>
+                    <li><a href="https://itu.edu.pk/press-clippings/">Press Clippings</a></li>
+
+
+
+                </ul>
+            </li>
+            <li><a href="https://itu.edu.pk/research/">RESEARCH</a></li>
+
+
+        </ul>
+    </nav>
+
+</div>
+
+    <!-- Header -->
+<div id="searchform">
+    <form action="https://itu.edu.pk" id="searchform" method="get">
+        <button type="submit" id="searchsubmit"></button>
+        <input type="search" name="s" id="s" placeholder="Search here..." autocomplete="off">
+    </form>
+</div>
+<div style="
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    background: #2e2f7c;
+    display:none;
+">PhD EE Interviews of all qualified candidates will be held at ITU, 4th Floor conference room on Thursday, 11th August 2022 at 11am.
+</div>
+     <!--======= MainSlider ======-->
+          <!--======= MainSlider ======-->
+  <div class="main-wrapper">
+      
+<div class="faculty-pattern">
+    <div class="container-fluid">
+        <p class="heading-para">Dr. Zeeshan Rafiq</p>   
+    </div> 
+</div>
+      
+      <div class="container-fluid main-content">
+      <div class="breadcrumbs">
+    <!-- Breadcrumb NavXT 7.3.1 -->
+<a title="Go to Information Technology University." href="https://itu.edu.pk" class="home">Home</a>/<a title="Go to Faculty Members." href="https://itu.edu.pk/faculty-itu/">Faculty Members</a>/<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the business-dept Category archives." href="https://itu.edu.pk/category/business-dept/?post_type=faculty-itu" class="taxonomy category" ><span property="name">business-dept</span></a><meta property="position" content="3"></span>/<a title="Go to Dr. Zeeshan Rafiq." href="https://itu.edu.pk/faculty-itu/dr-zeeshan-rafiq/">Dr. Zeeshan Rafiq</a>          
+     </div>
+          
+               
+      <div class="row admission-template">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 admissions-white-bg faculty-sidebar">  
+              <div class="faculty-single-thumb">
+
+                <img src="https://itu.edu.pk/wp-content/uploads/2023/02/zeeshan-Rafiq.jpg" width="100%" height="auto"></div>
+           <div class="faculty-box padlr">
+                <div class="heading">CONTACT INFO</div>
+                  <hr class="small-hr">
+                                  <p>6th Floor,</p>
+                  <p>Arfa Software Technology Park, Lahore</p>
+                  <p><strong>P</strong> (042) - 111-111-ITU (488)</p>
+                <div class="e-address"><strong>E</strong>   <a href="mailto:zeeshan.rafiq@itu.edu.pk">zeeshan.rafiq@itu.edu.pk</a></div>
+                                              </div>
+             
+       <div class="grey-button"><a class="text-center" href="mailto:zeeshan.rafiq@itu.edu.pk">contact</a>  </div>
+              
+          </div>
+          
+          <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 admissions-white-bg pg-content faculty-content">
+              <div class="faculty-info">
+                  <div class="faculty-title">Dr. Zeeshan Rafiq </div>
+                  <div class="desc">Assistant Professor and Chairperson, School of Business & Management</div>
+                  <div class="desc">Department of Business & Management Sciences</div>
+                  <div class="desc">PhD - Management, University of Edinburgh, United Kingdom</div>
+                  
+              </div> 
+              
+              <div class="heading">RESEARCH INTERESTS</div>
+              <hr class="small-hr">
+              <p></p>
+                  <div class="heading">biography</div>              
+              
+              <hr class="small-hr">
+              <p>Dr Zeeshan has completed his PhD in Management from the prestigious University of Edinburgh, United Kingdom. He has several accolades to his name. He obtained a distinction in Consumer Behaviour in his MBA from IBA, Punjab University. He is also the recipient of the Global Research Scholarship and the Principal Career Development Scholarship from the University of Edinburgh. Dr. Zeeshan’s academic experience spans graduate and master-level teaching in the area of Marketing. Before joining the ITU Business School as an Assistant Professor, he taught in and outside Pakistan in various capacities. Dr Zeeshan’s endeavors to provide a positive experience to those around him, notably the students, earned him a nomination for the Outstanding Contribution to the student experience award at the University of Edinburgh.</p>
+<p>His research interests are in understanding the various aspects of consumer behavior with an emphasis on consumer identity, consumer culture, consumer acculturation, and consumer well-being. Dr Zeeshan also has a longstanding interest in the role of religion and ethnicity in consumption. His PhD explores the role of religious and ethnic identification in the consumption and consumer acculturation of different generations of British Pakistani Muslims.</p>
+<div id="blueimp-gallery" class="blueimp-gallery" data-useBootstrapModal="0" data-fullScreen="1">
+            <div class="slides"></div>
+            <h3 class="title"></h3><a class="prev">&#xffe9;</a>
+        <a class="next">&#xffeb;</a>
+        <a class="close">&#120;</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <div class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body next"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left prev">
+                            Previous
+                        </button>
+                        <button type="button" class="btn btn-primary next">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>              <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          RECENT PUBLICATIONS
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+            </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          AWARDS & HONORS
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+          <p></p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          AFFILIATIONS
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+      <p></p>      
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+      </div>   
+      </div>   
+	<div class="ft-wrapper">
+    <div class="footer">
+        <div class="footer-topper">
+
+            <div class="container">
+                <div class="footer-top">
+                <div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<strong class="f-title">students</strong>
+						<ul class="site-links">
+							<li><a href="https://itu.edu.pk/itu-latest-news/">news</a></li>
+							<li><a href="https://itu.edu.pk/academics/grading-policy/">Grading Policy</a></li>
+							<li><a href="https://itu.edu.pk/academics/forms-and-documents/">Forms & Documents</a></li>
+							<li><a href="https://itu.edu.pk/about/library/">Library Resources</a></li>
+							<li><a href="https://itu.edu.pk/admissions/eligibility-criteria/">Programs Offered</a></li>
+                                                        <li><a href="https://itu.edu.pk/about/student-societies/">Campus Life</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<strong class="f-title">admissions</strong>
+						<ul class="site-links">
+<li><a href="https://itu.edu.pk/cet/" class="ajax-call">Trainings & Short Courses</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/bs-economics-with-data-science/#verticalTab1">BS Economics with Data Science</a></li>
+                            <!-- <li><a href="https://itu.edu.pk/admissions/bs-english-with-digital-humanities/">BS English with Digital Humanities </a></li> -->
+
+                            <li><a href="https://itu.edu.pk/admissions/bachelors-of-science-in-management-and-technology/#verticalTab1">BS Management & Technology</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/bs-computer-engineering/#verticalTab1">BS Computer Engineering</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/bs-electrical-engineering/#verticalTab1">BS Electrical Engineering</a></li>
+							<li><a href="https://itu.edu.pk/admissions/bs-computer-science/#verticalTab1">BS Computer Science</a></li>
+                            <!-- <li><a href="https://itu.edu.pk/admissions/bs-english-language-and-linguistics/#verticalTab1">BS English Language and Linguistics </a></li> -->
+                            <li><a href="https://itu.edu.pk/admissions/bs-software-engineering-bs-se/">BS Software Engineering </a></li>
+<li><a href="https://itu.edu.pk/admissions/bs-artificial-intelligence-bs-ai/">BS Artificial Intelligence </a></li>
+                            <li><a href="https://itu.edu.pk/admissions/emba/">Executive MBA (EMBA)</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/msdevs">MS Development Studies</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-in-public-policy-and-society/">MS Public Policy and Society</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-management-and-technology/">MS Management and Technology</a></li>
+
+                            <li><a href="https://itu.edu.pk/admissions/ms-data-science/#verticalTab1">MS Data Science</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-computer-science/#verticalTab1">MS Computer Science</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-electrical-engineering/#verticalTab1">MS Electrical Engineering</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/ms-computer-engineering/">MS Computer Engineering</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/diploma-of-advanced-studies-in-artificial-intelligence-das-ai/">Diploma of Advanced Studies in Artificial Intelligence</a></li>
+
+                            <li><a href="https://itu.edu.pk/admissions/phd-computer-science/#verticalTab1">PhD Computer Science</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/phd-electrical-engineering/#verticalTab1">PhD Electrical Engineering</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/eligibility-criteria">Eligibility Criteria</a></li>
+                            <li><a href="https://itu.edu.pk/admissions/admission-test">Admission Test</a></li>
+
+							
+							<li><a href="https://itu.edu.pk/academics/fee-structure/">Fee Structure</a></li>
+                            <li><a href="https://itu.edu.pk/financial-assistance/">Scholarships</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<strong class="f-title">university</strong>
+						<ul class="site-links">
+							<li><a href="https://itu.edu.pk/about/">About</a></li>
+							<li><a href="https://itu.edu.pk/careers/">Jobs & Openings</a></li>
+                            <li><a href="https://itu.edu.pk/student-services-and-placement-office-sspo/">Student Services & Placement Office (SSPO)</a></li>
+							<li><a href="https://itu.edu.pk/research/">Research Centres</a></li>
+							<li><a href="https://itu.edu.pk/faculty-itu/">Faculty</a></li>
+							<li><a href="https://itu.edu.pk/tenders">Tenders</a></li>
+                                                        <li><a href="https://itu.edu.pk/itu-rti-disclosure/">RTI</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<strong class="f-title">NEWSLETTER SUBSCRIPTION</strong>
+                                                <p class="fpara padtop20">Subscribe to keep yourself updated with the latest news & happenings</p>
+ <script type="text/javascript">
+//<![CDATA[
+if (typeof newsletter_check !== "function") {
+window.newsletter_check = function (f) {
+    var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
+    if (!re.test(f.elements["ne"].value)) {
+        alert("The email is not correct");
+        return false;
+    }
+    if (f.elements["ny"] && !f.elements["ny"].checked) {
+        alert("You must accept the privacy statement");
+        return false;
+    }
+    return true;
+}
+}
+//]]>
+</script>
+
+    <div class="newsletter newsletter-subscription">
+
+
+        <script type="text/javascript">
+            //<![CDATA[
+            if (typeof newsletter_check !== "function") {
+                window.newsletter_check = function (f) {
+                    var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
+                    if (!re.test(f.elements["ne"].value)) {
+                        alert("The email is not correct");
+                        return false;
+                    }
+                    for (var i=1; i<20; i++) {
+                        if (f.elements["np" + i] && f.elements["np" + i].required && f.elements["np" + i].value == "") {
+                            alert("");
+                            return false;
+                        }
+                    }
+                    if (f.elements["ny"] && !f.elements["ny"].checked) {
+                        alert("You must accept the privacy statement");
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            //]]>
+        </script>
+
+        <div class="tnp">
+            <form method="post" action="https://itu.edu.pk/?na=s" onsubmit="return newsletter_check(this)">
+
+                <table cellspacing="0" cellpadding="3" border="0">
+
+                    <!-- email -->
+                    <tbody><tr>
+                        <th></th>
+                        <td align="left"><input placeholder="Your Email" class="newsletter-email form-control newletter pull-left tnp-email" type="email" name="ne" size="30" required=""></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="tnp-td-submit">
+                            <input class="newsletter-submit move-right tnp-submit" type="image" src="https://itu.edu.pk/wp-content/themes/itu/images/newsletter-icon.jpg" >
+                        </td>
+                    </tr>
+
+                    </tbody></table>
+            </form>
+        </div>
+    </div>
+                        <img src="https://itu.edu.pk/wp-content/uploads/2017/12/Seal.png" class="img-responsive" alt="" style="padding: 47px 26px 0px 13px;">
+
+                                        </div>
+				</div> 
+                    </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-sx-12">
+                        <p class="fpara">ITU Admissions Office</p>   
+                        <p class="fpara">6th Floor, Arfa Software Technology Park, Ferozepur Road, Lahore</p>
+                        <p class="fpara"><span class="itu-orange">E   </span><a href="mailto:admission@itu.edu.pk" style="color:#fff;">admission@itu.edu.pk</a></p>
+                        <p class="fpara"><span class="itu-orange">Admission Queries   </span>042-99046061   |   0307-0111488</p>
+                        <p class="fpara"><span class="itu-orange">UAN  </span>   (042) - 111-111-ITU (488)</p>
+                    </div>  
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-sx-12 col-lg-offset-2">
+                      <ul class="social-links inline pull-right">
+                        <a href="https://www.facebook.com/ITU.punjab?fref=ts" target="_blank"><li class="icon img-circle fa fa-facebook custom-h"></li></a>  
+                        <!-- <a href="https://twitter.com/ITUPunjab" target="_blank"><li class="icon img-circle fa fa-twitter"></li></a> -->
+                        <a href="https://www.linkedin.com/company/itu---information-technology-university" target="_blank"><li class="icon img-circle fa fa-linkedin"></li></a>
+                        <a href="https://www.instagram.com/itu_punjab/" target="_blank"><li class="icon img-circle fa fa-instagram"></li></a>
+                        <a href="https://www.youtube.com/c/ITUOfficial" target="_blank"><li class="icon img-circle fa fa-youtube"></li></a>
+                      </ul>  
+                    </div>  
+                </div>
+                
+                </div>
+            
+
+
+        </div>
+    </div>
+<video class="video-background" autoplay="" loop="" muted="" volume="4" autobuffer="" controls="" ><source src="https://itu.edu.pk/wp-content/uploads/2020/04/footer.mp4" type="video/mp4">
+    </video>
+
+</div>
+<div class="footer-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-sx-12">
+                <ul class="list-inline bottom-links">
+                    <li><a href="https://itu.edu.pk">HOME</a></li>
+                    <li><a href="https://itu.edu.pk/about">ABOUT</a></li>
+                    <li><a href="https://itu.edu.pk/careers">CAREERS</a></li>
+                    <li><a href="https://itu.edu.pk/contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-sx-12 col-lg-offset-1">
+                <p class="fpara text-right">&copy; 2024 Information Technology University</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+		<script>
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+		
+			<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v6.0&autoLogAppEvents=1'
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			<div class="fb-customerchat" attribution="wordpress" attribution_version="2.3" page_id="445047635507636"></div>
+
+			<script type="text/javascript">jQuery(function(){omShortcodes.init(["buttons","tooltips","toggle","tabs","responsivebox","counter"]);});</script><script type="text/javascript">
+		jQuery(function(){
+			jQuery("a.yes").YouTubePopUp();
+			jQuery("a.no").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+		});
+	</script>
+
+  			<script type="text/javascript">function showhide_toggle(e,t,r,g){var a=jQuery("#"+e+"-link-"+t),s=jQuery("a",a),i=jQuery("#"+e+"-content-"+t),l=jQuery("#"+e+"-toggle-"+t);a.toggleClass("sh-show sh-hide"),i.toggleClass("sh-show sh-hide").toggle(),"true"===s.attr("aria-expanded")?s.attr("aria-expanded","false"):s.attr("aria-expanded","true"),l.text()===r?(l.text(g),a.trigger("sh-link:more")):(l.text(r),a.trigger("sh-link:less")),a.trigger("sh-link:toggle")}</script>
+	
+
+<script type="text/javascript">
+/*<![CDATA[*/
+var wpcf_access_dep_active_messages_pattern_singular = "Since you enabled '%cap', '%dcaps' has also been enabled.";
+var wpcf_access_dep_active_messages_pattern_plural = "Since you enabled '%cap', '%dcaps' have also been enabled.";
+var wpcf_access_dep_inactive_messages_pattern_singular = "Since you disabled '%cap', '%dcaps' has also been disabled.";
+var wpcf_access_dep_inactive_messages_pattern_plural = "Since you disabled '%cap', '%dcaps' have also been disabled.";
+var wpcf_access_dep_edit_own_title = "Edit own";
+var wpcf_access_dep_edit_any_title = "Edit any";
+var wpcf_access_dep_publish_title = "Publish";
+var wpcf_access_dep_delete_own_title = "Delete own";
+var wpcf_access_dep_delete_any_title = "Delete any";
+var wpcf_access_dep_read_title = "Read";
+var wpcf_access_dep_edit_terms_title = "Edit terms";
+var wpcf_access_dep_manage_terms_title = "Manage terms";
+var wpcf_access_dep_delete_terms_title = "Delete terms";
+var wpcf_access_dep_assign_terms_title = "Assign terms";
+var wpcf_access_dep_true_edit_own = ['read'];
+var wpcf_access_dep_true_edit_own_message = ['Read'];
+var wpcf_access_dep_true_edit_any = ['read', 'edit_own'];
+var wpcf_access_dep_true_edit_any_message = ['Read','Edit own'];
+var wpcf_access_dep_true_publish = ['read', 'edit_own', 'delete_own'];
+var wpcf_access_dep_true_publish_message = ['Read','Edit own','Delete own'];
+var wpcf_access_dep_true_delete_own = ['read'];
+var wpcf_access_dep_true_delete_own_message = ['Read'];
+var wpcf_access_dep_true_delete_any = ['read', 'delete_own'];
+var wpcf_access_dep_true_delete_any_message = ['Read','Delete own'];
+var wpcf_access_dep_true_manage_terms = ['edit_terms', 'delete_terms'];
+var wpcf_access_dep_true_manage_terms_message = ['Edit terms','Delete terms'];
+var wpcf_access_dep_true_delete_terms = ['manage_terms'];
+var wpcf_access_dep_true_delete_terms_message = ['Manage terms'];
+var wpcf_access_dep_false_edit_own = ['edit_any', 'publish'];
+var wpcf_access_dep_false_edit_own_message = ['Edit any','Publish'];
+var wpcf_access_dep_false_delete_own = ['delete_any', 'publish'];
+var wpcf_access_dep_false_delete_own_message = ['Delete any','Publish'];
+var wpcf_access_dep_false_read = ['edit_own', 'delete_own', 'edit_any', 'delete_any', 'publish'];
+var wpcf_access_dep_false_read_message = ['Edit own','Delete own','Edit any','Delete any','Publish'];
+var wpcf_access_dep_false_edit_terms = ['manage_terms'];
+var wpcf_access_dep_false_edit_terms_message = ['Manage terms'];
+/*]]>*/
+</script>
+
+<link rel='stylesheet' id='YouTubePopUp-css' href='https://itu.edu.pk/wp-content/plugins/responsive-youtube-vimeo-video-lightbox/css/videoPopUp.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='https://itu.edu.pk/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.6.7' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<script type="text/javascript" src="https://itu.edu.pk/wp-includes/js/comment-reply.min.js?ver=6.6.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/olevmedia-shortcodes/assets/js/shortcodes.js?ver=1.1.9" id="omsc-shortcodes-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.6.7" defer async id="tp-tools-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.6.7" defer async id="revmin-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/3d-flipbook-dflip-lite/assets/js/dflip.min.js?ver=2.3.32" id="dflip-script-js"></script>
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/plugins/responsive-youtube-vimeo-video-lightbox/js/videoPopUp.jquery.js?ver=6.6.1" id="videoPopUp.jquery-js"></script>
+<script data-cfasync="false"> var dFlipLocation = "https://itu.edu.pk/wp-content/plugins/3d-flipbook-dflip-lite/assets/"; var dFlipWPGlobal = {"text":{"toggleSound":"Turn on\/off Sound","toggleThumbnails":"Toggle Thumbnails","toggleOutline":"Toggle Outline\/Bookmark","previousPage":"Previous Page","nextPage":"Next Page","toggleFullscreen":"Toggle Fullscreen","zoomIn":"Zoom In","zoomOut":"Zoom Out","toggleHelp":"Toggle Help","singlePageMode":"Single Page Mode","doublePageMode":"Double Page Mode","downloadPDFFile":"Download PDF File","gotoFirstPage":"Goto First Page","gotoLastPage":"Goto Last Page","share":"Share","mailSubject":"I wanted you to see this FlipBook","mailBody":"Check out this site {{url}}","loading":"DearFlip: Loading "},"viewerType":"flipbook","moreControls":"download,pageMode,startPage,endPage,sound","hideControls":"","scrollWheel":"false","backgroundColor":"#777","backgroundImage":"","height":"auto","paddingLeft":"20","paddingRight":"20","controlsPosition":"bottom","duration":800,"soundEnable":"true","enableDownload":"true","showSearchControl":"false","showPrintControl":"false","enableAnnotation":false,"enableAnalytics":"false","webgl":"true","hard":"none","maxTextureSize":"1600","rangeChunkSize":"524288","zoomRatio":1.5,"stiffness":3,"pageMode":"0","singlePageMode":"0","pageSize":"0","autoPlay":"false","autoPlayDuration":5000,"autoPlayStart":"false","linkTarget":"2","sharePrefix":"flipbook-"};</script>	
+	<!-- Don't forget analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51206825-1', 'itu.edu.pk');
+  ga('send', 'pageview');
+
+</script>
+<script>$('#play').click(function() {
+    
+                         $('#audio-file').trigger('play');
+                         $(this).hide();
+                         $('#pause').show();
+                         });
+
+$('#pause').click(function() {
+                  $('#audio-file').trigger('pause');
+                  $(this).hide();
+                  $('#play').show();
+                  });</script>
+
+<script type="text/javascript" src="https://itu.edu.pk/wp-content/themes/itu/js/dropdown.js"></script>
+<script type="text/javascript">
+            
+            $( function() {
+                
+                $( '#cd-dropdown' ).dropdown( {
+                    gutter : 2
+                } );
+
+                                $( '#cd-dropdown2' ).dropdown( {
+                    gutter : 2
+                } );
+
+                                            $( '#cd-dropdown3' ).dropdown( {
+                    gutter : 2
+                } );
+
+                                                        $( '#cd-dropdown4' ).dropdown( {
+                    gutter : 2
+                } );
+
+            });
+
+        </script>
+
+</body>
+
+</html>
